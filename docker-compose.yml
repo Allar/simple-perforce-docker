@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  simpleperforcedocker:
+    image: simpleperforcedocker
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      args:
+        - 'SuperUserName=Allar'
+        - 'SuperUserPassword=AllarAllar'
+    volumes:
+      - type: volume
+        source: p4data
+        target: /p4/p4root
+        volume:
+          nocopy: true
+    ports:
+      - "1666:1666"
+
+volumes: 
+  p4data:
