@@ -1,0 +1,36 @@
+# A Perforce Stream Specification.
+#
+#  Stream:       The stream field is unique and specifies the depot path.
+#  Update:       The date the specification was last changed.
+#  Access:       The date the specification was originally created.
+#  Owner:        The user who created this stream.
+#  Name:         A short title which may be updated.
+#  Parent:       The parent of this stream, or 'none' if Type is mainline.
+#  Type:         Type of stream provides clues for commands run
+#                between stream and parent.  Five types include 'mainline',
+#                'release', 'development' (default), 'virtual' and 'task'.
+#  Description:  A short description of the stream (optional).
+#  Options:      Stream Options:
+#                       allsubmit/ownersubmit [un]locked
+#                       [no]toparent [no]fromparent mergedown/mergeany
+#  Paths:        Identify paths in the stream and how they are to be
+#                generated in resulting clients of this stream.
+#                Path types are share/isolate/import/import+/exclude.
+#  Remapped:     Remap a stream path in the resulting client view.
+#  Ignored:      Ignore a stream path in the resulting client view.
+#
+# Use 'p4 help stream' to see more about stream specifications and command.
+
+Stream: //REPLACE_WITH_STREAM_NAME/main
+
+Owner:  REPLACE_WITH_SUPER_USER
+Name:   main
+Parent: none
+Type:   mainline
+ParentView: inherit
+Description:
+        Created by Simple Perforce Docker on start up.
+
+Options:    allsubmit
+Paths:
+        share ...

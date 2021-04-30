@@ -14,7 +14,7 @@ services:
         source: p4data
         target: /p4/p4root
         volume:
-          nocopy: true
+          nocopy: false
     ports:
       - "1666:1666"
 

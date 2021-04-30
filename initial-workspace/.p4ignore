@@ -1,0 +1,96 @@
+# from https://github.com/mattmarcin/ue4-perforce/blob/master/.p4ignore
+
+Saved/
+LocalBuilds/
+*.csproj.*
+.vs/*
+*.pdb
+*.suo
+*.opensdf
+*.sdf
+*.tmp
+*.mdb
+obj/
+*.vcxproj
+*.sln
+*-Debug.*
+FileOpenOrder/
+*.xcworkspace
+*.xcodeproj
+./Makefile
+./CMakeLists.txt
+.ue4dependencies
+
+# Samples/*
+# FeaturePacks/*
+# Templates/*
+# Engine/Documentation/*
+
+# Engine intermediates
+Engines/**/Engine/Intermediate/*
+Intermediate/
+
+# Intermediate folders for programs should not be checked in
+Engines/**/Engine/Programs/*/Intermediate/*
+
+# Intermediate folders created for various C# programs
+Engines/**/Engine/Source/Programs/*/obj/*
+
+# Saved folders for programs should not be checked in
+Engines/**/Engine/Programs/*/Saved/*
+Engines/**/Engine/Programs/UnrealBuildTool/*
+
+# Derived data cache should never be checked in
+Engines/**/Engine/DerivedDataCache/*
+
+# Ignore any build receipts
+Engines/**/Engine/Build/Receipts/*
+
+# Ignore personal workspace vars
+p4config.txt
+
+# Ignore Unix backup files
+*~
+
+# Ignore Mac desktop services store files
+.DS_Store
+
+# Ignore crash reports
+crashinfo--*
+
+# Ignore linux project files
+*.user
+*.pro
+*.pri
+*.kdev4
+
+# Obj-C/Swift specific
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Ignore documentation generated for C# tools
+Engines/**/Engine/Binaries/DotNET/UnrealBuildTool.xml
+Engines/**/Engine/Binaries/DotNET/AutomationScripts/BuildGraph.Automation.xml
+
+# Ignore version files in the Engine/Binaries directory created by UBT
+Engines/**/Engine/Binaries/**/*.version
+
+# Ignore exp files in the the Engine/Binaries directory as they aren't C/C++ source files
+Engines/**/Engine/Binaries/**/*.exp
+
+# Ignore Swarm local save files
+Engines/**/Engine/Binaries/DotNET/SwarmAgent.DeveloperOptions.xml
+Engines/**/Engine/Binaries/DotNET/SwarmAgent.Options.xml
+
+# Intermediary Files
+*.target.xml
+*.exe.config
+*.exe.manifest
+
+# Ignore project-specific files
+Projects/**/Build/Receipts/*
+Projects/**/DerivedDataCache/*
+Projects/**/Binaries/*-Shipping.*
+Projects/**/Intermediate/*

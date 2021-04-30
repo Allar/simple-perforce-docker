@@ -1,0 +1,56 @@
+# A Perforce Client Specification.
+#
+#  Client:      The client name.
+#  Update:      The date this specification was last modified.
+#  Access:      The date this client was last used in any way.
+#  Owner:       The Perforce user name of the user who owns the client
+#               workspace. The default is the user who created the
+#               client workspace.
+#  Host:        If set, restricts access to the named host.
+#  Description: A short description of the client (optional).
+#  Root:        The base directory of the client workspace.
+#  AltRoots:    Up to two alternate client workspace roots.
+#  Options:     Client options:
+#                      [no]allwrite [no]clobber [no]compress
+#                      [un]locked [no]modtime [no]rmdir
+#  SubmitOptions:
+#                      submitunchanged/submitunchanged+reopen
+#                      revertunchanged/revertunchanged+reopen
+#                      leaveunchanged/leaveunchanged+reopen
+#  LineEnd:     Text file line endings on client: local/unix/mac/win/share.
+#  Type:        Type of client: writeable/readonly.
+#  Backup:      Client's participation in backup enable/disable. If not
+#               specified backup of a writable client defaults to enabled.
+#  ServerID:    If set, restricts access to the named server.
+#  View:        Lines to map depot files into the client workspace.
+#  ChangeView:  Lines to restrict depot files to specific changelists.
+#  Stream:      The stream to which this client's view will be dedicated.
+#               (Files in stream paths can be submitted only by dedicated
+#               stream clients.) When this optional field is set, the
+#               View field will be automatically replaced by a stream
+#               view as the client spec is saved.
+#  StreamAtChange:  A changelist number that sets a back-in-time view of a
+#                   stream ( Stream field is required ).
+#                   Changes cannot be submitted when this field is set.
+#
+# Use 'p4 help client' to see more about client views and options.
+
+Client:         REPLACE_WITH_SERVER_WORKSPACE_NAME
+
+Owner:          REPLACE_WITH_SUPER_USER
+
+Description:
+                Created by Simple Perforce Docker on intialization.
+
+Root:           /p4/p4root/workspace
+
+Options:        clobber
+
+SubmitOptions:  revertunchanged
+
+LineEnd:        local
+
+Stream:         //REPLACE_WITH_STREAM_NAME/main
+
+View:
+                //REPLACE_WITH_STREAM_NAME/main/... //REPLACE_WITH_SERVER_WORKSPACE_NAME/...
